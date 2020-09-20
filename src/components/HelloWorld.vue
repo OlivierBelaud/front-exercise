@@ -18,7 +18,7 @@
     <div class="exercise">
       <ul class="flex wrap">
         <li v-for="letter in letters" :class="{ 'active': letter.active }" :key="letter.key">
-          <button @click="addActiveOnLetter(letter)">{{ letter.value }}</button>
+          <button @click="switchActiveOnLetter(letter)">{{ letter.value }}</button>
         </li>
       </ul>
     </div>
@@ -36,8 +36,8 @@ export default {
     }
   },
   methods: {
-    addActiveOnLetter(letter) {
-      letter.active = true
+    switchActiveOnLetter(letter) {
+      letter.active = !letter.active
       this.letters = [...this.letters]
       console.log(letter)
     }
