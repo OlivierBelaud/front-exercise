@@ -66,7 +66,8 @@ export default {
   button {
     background-color: pink;
     padding: 15px;
-    border: 0
+    border: 0;
+    cursor: pointer;
   }
   button:hover {
     background-color: green
