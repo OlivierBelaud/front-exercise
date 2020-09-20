@@ -32,14 +32,24 @@ export default {
   name: 'HelloWorld',
   data() {
     return {
-      letters
+      letters,
+      activeLetter: {}
     }
   },
   methods: {
     switchActiveOnLetter(letter) {
+      this.anotherLetterIsActive(letter) && (
+        this.activeLetter.active = false
+      )
       letter.active = !letter.active
+
       this.letters = [...this.letters]
+      this.activeLetter = letter
+
       console.log(letter)
+    },
+    anotherLetterIsActive(letter) {
+      return letter !== this.activeLetter
     }
   }
 }
