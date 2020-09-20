@@ -38,7 +38,7 @@ export default {
   methods: {
     addActiveOnLetter(letter) {
       letter.active = true
-
+      this.letters = [...this.letters]
       console.log(letter)
     }
   }
